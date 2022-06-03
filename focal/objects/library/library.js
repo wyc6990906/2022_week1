@@ -110,18 +110,22 @@ const addTrack = function (name, artist, album) {
     artist: artist,
     album: album
   }
-
   console.log(library.tracks)
-
 }
-addTrack("Quiet", "Jay Chou", "Final Cut");
-printTracks(library);
+// addTrack("Quiet", "Jay Chou", "Final Cut");
+// printTracks(library);
 
 // adds a playlist to the library
 const addPlaylist = function (name) {
-
+  const uid = generateUid();
+  library.playlists["p0" + ((Object.keys(library.playlists).length) + 1)] = {
+    id: uidMake,
+    name: name,
+    tracks: []
+  }
 }
-
+addPlaylist("I love LHL~");
+printPlaylists();
 
 // STRETCH:
 // given a query string string, prints a list of tracks
