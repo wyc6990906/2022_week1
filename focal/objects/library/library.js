@@ -84,12 +84,14 @@ const printPlaylist = function (playlistId) {
     );
   });
 }
-printPlaylist("p01")
+// printPlaylist("p01")
 
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function (trackId, playlistId) {
-
+  library.playlists[playlistId].tracks.push(trackId)
+  console.log(library.playlists[playlistId].tracks)
 }
+// addTrackToPlaylist("t02", "p02");
 
 
 // generates a unique id
@@ -101,9 +103,19 @@ const generateUid = function () {
 
 // adds a track to the library
 const addTrack = function (name, artist, album) {
+  const uid = generateUid();
+  library.tracks["t0" + ((Object.keys(library.tracks).length) + 1)] = {
+    id: uid,
+    name: name,
+    artist: artist,
+    album: album
+  }
+
+  console.log(library.tracks)
 
 }
-
+addTrack("Quiet", "Jay Chou", "Final Cut");
+printTracks(library);
 
 // adds a playlist to the library
 const addPlaylist = function (name) {
