@@ -1,4 +1,4 @@
-const obfuscate = function (string) {
+const obfuscatePassword = function (string) {
   let output = "";
   for (let i = 0; i < string.length; i++) {
     if (string[i] === "a") {
@@ -17,4 +17,4 @@ const obfuscate = function (string) {
 };
 
 const str = process.argv[2] || ' '
-console.log(obfuscate(str))
+console.log(obfuscatePassword(str))
